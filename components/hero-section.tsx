@@ -62,12 +62,14 @@ export function HeroSection() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
-              <Button
-                size="lg"
-                className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 text-lg font-bold animate-pulse shadow-lg"
-              >
-                🚀 Outrank your competition today!
-              </Button>
+              <a href="https://forms.gle/4az5HztK65J4W1CaA" target="_blank">
+                <Button
+                  size="lg"
+                  className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 text-lg font-bold animate-pulse shadow-lg"
+                >
+                  🚀 Outrank your competition today!
+                </Button>
+              </a>
               <AlertDialog>
                 <AlertDialogTrigger asChild>
                   <Button

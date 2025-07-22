@@ -83,7 +83,6 @@ export function Header() {
                     LocalEyes is an AI platform that will make sure your
                     business lands at the top where any potential customers
                     looking for their next favourite spot can find you!
-					<br />
                     <br />
                     <Input type="email" placeholder="Email" />
                   </AlertDialogDescription>
@@ -96,9 +95,11 @@ export function Header() {
                 </AlertDialogFooter>
               </AlertDialogContent>
             </AlertDialog>
-            <Button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 animate-pulse">
-              Start Free Trial
-            </Button>
+            <a href="https://forms.gle/4az5HztK65J4W1CaA" target="_blank">
+              <Button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 animate-pulse">
+                Start Free Trial
+              </Button>
+            </a>
           </div>
 
           {/* Mobile menu button */}

@@ -89,12 +89,14 @@ export function FinalCtaSection() {
           <div
             className={`flex flex-col sm:flex-row gap-6 justify-center mb-12 transition-all duration-1000 delay-600 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
           >
-            <Button
-              size="lg"
-              className="bg-white text-red-600 hover:bg-gray-100 px-12 py-6 text-xl font-bold shadow-2xl hover:shadow-3xl transition-all hover:scale-105 animate-pulse"
-            >
-              🚀 Start My Free Trial Now
-            </Button>
+            <a href="https://forms.gle/4az5HztK65J4W1CaA" target="_blank">
+              <Button
+                size="lg"
+                className="bg-white text-red-600 hover:bg-gray-100 px-12 py-6 text-xl font-bold shadow-2xl hover:shadow-3xl transition-all hover:scale-105 animate-pulse"
+              >
+                🚀 Start My Free Trial Now
+              </Button>
+            </a>
 
             <AlertDialog>
               <AlertDialogTrigger asChild>
