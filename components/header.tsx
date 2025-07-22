@@ -19,13 +19,13 @@ export function Header() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#features" className="text-gray-600 hover:text-blue-600 font-medium transition-colors">
+            <a href="#solution-section" className="text-gray-600 hover:text-blue-600 font-medium transition-colors">
               Features
             </a>
-            <a href="#how-it-works" className="text-gray-600 hover:text-blue-600 font-medium transition-colors">
+            <a href="#how-it-works-section" className="text-gray-600 hover:text-blue-600 font-medium transition-colors">
               How It Works
             </a>
-            <a href="#testimonials" className="text-gray-600 hover:text-blue-600 font-medium transition-colors">
+            <a href="#testimonials-section" className="text-gray-600 hover:text-blue-600 font-medium transition-colors">
               Success Stories
             </a>
             <a href="#faq" className="text-gray-600 hover:text-blue-600 font-medium transition-colors">
