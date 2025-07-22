@@ -1,27 +1,39 @@
-"use client"
+"use client";
 
-import { Button } from "@/components/ui/button"
-import { Clock, Users, CreditCard } from "lucide-react"
-import { useEffect, useState } from "react"
+import { Button } from "@/components/ui/button";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
+import { Clock, Users, CreditCard } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Input } from "@/components/ui/input";
 
 export function FinalCtaSection() {
-  const [isVisible, setIsVisible] = useState(false)
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible(true)
+          setIsVisible(true);
         }
       },
       { threshold: 0.1 },
-    )
+    );
 
-    const element = document.getElementById("final-cta-section")
-    if (element) observer.observe(element)
+    const element = document.getElementById("final-cta-section");
+    if (element) observer.observe(element);
 
-    return () => observer.disconnect()
-  }, [])
+    return () => observer.disconnect();
+  }, []);
 
   const benefits = [
     {
@@ -36,7 +48,7 @@ export function FinalCtaSection() {
       icon: Clock,
       text: "Cancel anytime",
     },
-  ]
+  ];
 
   return (
     <section
@@ -66,8 +78,11 @@ export function FinalCtaSection() {
           <p
             className={`text-xl mb-8 opacity-90 leading-relaxed transition-all duration-1000 delay-300 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
           >
-            <strong>You lose nothing by signing up</strong> and so many future regulars if you don't.{" "}
-            <span className="text-yellow-300 font-bold">Start now and see the results in weeks.</span>
+            <strong>You lose nothing by signing up</strong> and so many future
+            regulars if you don't.{" "}
+            <span className="text-yellow-300 font-bold">
+              Start now and see the results in weeks.
+            </span>
           </p>
 
           {/* CTA Buttons */}
@@ -80,13 +95,39 @@ export function FinalCtaSection() {
             >
               🚀 Start My Free Trial Now
             </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-white text-white hover:bg-white hover:text-red-600 px-12 py-6 text-xl font-bold bg-transparent"
-            >
-              📞 Book a Demo
-            </Button>
+
+            <AlertDialog>
+              <AlertDialogTrigger asChild>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-white text-white hover:bg-white hover:text-red-600 px-12 py-6 text-xl font-bold bg-transparent"
+                >
+                  📞 Book a Demo
+                </Button>
+              </AlertDialogTrigger>
+              <AlertDialogContent>
+                <AlertDialogHeader>
+                  <AlertDialogTitle className="border-blue-600 text-blue-600 hover:bg-blue-50 bg-transparent">
+                    Book a Demo
+                  </AlertDialogTitle>
+                  <AlertDialogDescription>
+                    LocalEyes is an AI platform that will make sure your
+                    business lands at the top where any potential customers
+                    looking for their next favourite spot can find you!
+                    <br />
+                    <br />
+                    <Input type="email" placeholder="Email" />
+                  </AlertDialogDescription>
+                </AlertDialogHeader>
+                <AlertDialogFooter>
+                  <AlertDialogCancel>Cancel</AlertDialogCancel>
+                  <AlertDialogAction className="border-blue-600 border text-blue-600 hover:bg-blue-50 bg-transparent">
+                    Book Now
+                  </AlertDialogAction>
+                </AlertDialogFooter>
+              </AlertDialogContent>
+            </AlertDialog>
           </div>
 
           {/* Benefits */}
@@ -113,5 +154,5 @@ export function FinalCtaSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

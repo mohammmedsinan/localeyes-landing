@@ -1,16 +1,28 @@
-"use client"
+"use client";
 
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { MapPin, Star, TrendingUp, Eye } from "lucide-react"
-import { useEffect, useState } from "react"
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { MapPin, Star, TrendingUp, Eye } from "lucide-react";
+import { useEffect, useState } from "react";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+  AlertDialogHeader,
+} from "@/components/ui/alert-dialog";
+import { Input } from "@/components/ui/input";
 
 export function HeroSection() {
-  const [isVisible, setIsVisible] = useState(false)
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    setIsVisible(true)
-  }, [])
+    setIsVisible(true);
+  }, []);
 
   return (
     <section className="py-20 lg:py-32 bg-gradient-to-br from-blue-50 via-white to-blue-50 overflow-hidden">
@@ -25,7 +37,8 @@ export function HeroSection() {
             </Badge>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-              <span className="text-blue-600">Local Search</span> is the key to stop being{" "}
+              <span className="text-blue-600">Local Search</span> is the key to
+              stop being{" "}
               <span className="relative">
                 invisible
                 <div className="absolute -bottom-2 left-0 w-full h-1 bg-red-400 animate-pulse"></div>
@@ -33,16 +46,18 @@ export function HeroSection() {
             </h1>
 
             <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-              <strong>Help your future customers find you.</strong> LocalEyes is an AI platform that will make sure your
-              business lands at the top where any potential customers looking for their next favourite spot can find
-              you!
+              <strong>Help your future customers find you.</strong> LocalEyes is
+              an AI platform that will make sure your business lands at the top
+              where any potential customers looking for their next favourite
+              spot can find you!
             </p>
 
             <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-8 rounded-r-lg">
               <p className="text-gray-700">
-                <strong>In today's digital age, 8 out of 10 people</strong> will search online when finding a place to
-                eat. LocalEyes helps you optimize your Google and Apple business profiles, manage reviews, and beat the
-                increasing AI-driven algorithm.
+                <strong>In today's digital age, 8 out of 10 people</strong> will
+                search online when finding a place to eat. LocalEyes helps you
+                optimize your Google and Apple business profiles, manage
+                reviews, and beat the increasing AI-driven algorithm.
               </p>
             </div>
 
@@ -53,13 +68,38 @@ export function HeroSection() {
               >
                 🚀 Outrank your competition today!
               </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-blue-600 text-blue-600 hover:bg-blue-50 px-8 py-4 text-lg font-semibold bg-transparent"
-              >
-                📞 Book a Demo
-              </Button>
+              <AlertDialog>
+                <AlertDialogTrigger asChild>
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="border-blue-600 text-blue-600 hover:bg-blue-50 px-8 py-4 text-lg font-semibold bg-transparent"
+                  >
+                    📞 Book a Demo
+                  </Button>
+                </AlertDialogTrigger>
+                <AlertDialogContent>
+                  <AlertDialogHeader>
+                    <AlertDialogTitle className="border-blue-600 text-blue-600 hover:bg-blue-50 bg-transparent">
+                      Book a Demo
+                    </AlertDialogTitle>
+                    <AlertDialogDescription>
+                      LocalEyes is an AI platform that will make sure your
+                      business lands at the top where any potential customers
+                      looking for their next favourite spot can find you!
+                      <br />
+                      <br />
+                      <Input type="email" placeholder="Email" />
+                    </AlertDialogDescription>
+                  </AlertDialogHeader>
+                  <AlertDialogFooter>
+                    <AlertDialogCancel>Cancel</AlertDialogCancel>
+                    <AlertDialogAction className="border-blue-600 border text-blue-600 hover:bg-blue-50 bg-transparent">
+                      Book Now
+                    </AlertDialogAction>
+                  </AlertDialogFooter>
+                </AlertDialogContent>
+              </AlertDialog>
             </div>
 
             <div className="flex items-center space-x-6 text-sm text-gray-500">
@@ -95,7 +135,9 @@ export function HeroSection() {
                       <div className="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center">
                         <MapPin className="w-4 h-4 text-white" />
                       </div>
-                      <span className="font-semibold text-gray-900">Google Maps</span>
+                      <span className="font-semibold text-gray-900">
+                        Google Maps
+                      </span>
                     </div>
 
                     {/* Search Results */}
@@ -104,21 +146,34 @@ export function HeroSection() {
                       <div className="bg-green-50 border-2 border-green-400 rounded-lg p-3 animate-pulse">
                         <div className="flex items-start space-x-3">
                           <div className="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center">
-                            <span className="text-white font-bold text-xs">YOUR</span>
+                            <span className="text-white font-bold text-xs">
+                              YOUR
+                            </span>
                           </div>
                           <div className="flex-1">
-                            <h3 className="font-bold text-gray-900">Your Restaurant</h3>
+                            <h3 className="font-bold text-gray-900">
+                              Your Restaurant
+                            </h3>
                             <div className="flex items-center space-x-1 mb-1">
                               <div className="flex text-yellow-400">
                                 {[...Array(5)].map((_, i) => (
-                                  <Star key={i} className="w-3 h-3 fill-current" />
+                                  <Star
+                                    key={i}
+                                    className="w-3 h-3 fill-current"
+                                  />
                                 ))}
                               </div>
-                              <span className="text-sm text-gray-600">(127 reviews)</span>
+                              <span className="text-sm text-gray-600">
+                                (127 reviews)
+                              </span>
                             </div>
-                            <p className="text-xs text-gray-600">0.2 mi • Open now</p>
+                            <p className="text-xs text-gray-600">
+                              0.2 mi • Open now
+                            </p>
                           </div>
-                          <Badge className="bg-green-600 text-white text-xs">#1</Badge>
+                          <Badge className="bg-green-600 text-white text-xs">
+                            #1
+                          </Badge>
                         </div>
                       </div>
 
@@ -127,17 +182,26 @@ export function HeroSection() {
                         <div className="flex items-start space-x-3">
                           <div className="w-12 h-12 bg-gray-400 rounded-lg"></div>
                           <div className="flex-1">
-                            <h3 className="font-semibold text-gray-700">Competitor A</h3>
+                            <h3 className="font-semibold text-gray-700">
+                              Competitor A
+                            </h3>
                             <div className="flex items-center space-x-1 mb-1">
                               <div className="flex text-yellow-400">
                                 {[...Array(4)].map((_, i) => (
-                                  <Star key={i} className="w-3 h-3 fill-current" />
+                                  <Star
+                                    key={i}
+                                    className="w-3 h-3 fill-current"
+                                  />
                                 ))}
                                 <Star className="w-3 h-3 text-gray-300" />
                               </div>
-                              <span className="text-sm text-gray-600">(89 reviews)</span>
+                              <span className="text-sm text-gray-600">
+                                (89 reviews)
+                              </span>
                             </div>
-                            <p className="text-xs text-gray-600">0.5 mi • Closes soon</p>
+                            <p className="text-xs text-gray-600">
+                              0.5 mi • Closes soon
+                            </p>
                           </div>
                         </div>
                       </div>
@@ -146,19 +210,31 @@ export function HeroSection() {
                         <div className="flex items-start space-x-3">
                           <div className="w-12 h-12 bg-gray-400 rounded-lg"></div>
                           <div className="flex-1">
-                            <h3 className="font-semibold text-gray-700">Competitor B</h3>
+                            <h3 className="font-semibold text-gray-700">
+                              Competitor B
+                            </h3>
                             <div className="flex items-center space-x-1 mb-1">
                               <div className="flex text-yellow-400">
                                 {[...Array(3)].map((_, i) => (
-                                  <Star key={i} className="w-3 h-3 fill-current" />
+                                  <Star
+                                    key={i}
+                                    className="w-3 h-3 fill-current"
+                                  />
                                 ))}
                                 {[...Array(2)].map((_, i) => (
-                                  <Star key={i} className="w-3 h-3 text-gray-300" />
+                                  <Star
+                                    key={i}
+                                    className="w-3 h-3 text-gray-300"
+                                  />
                                 ))}
                               </div>
-                              <span className="text-sm text-gray-600">(45 reviews)</span>
+                              <span className="text-sm text-gray-600">
+                                (45 reviews)
+                              </span>
                             </div>
-                            <p className="text-xs text-gray-600">0.8 mi • Open</p>
+                            <p className="text-xs text-gray-600">
+                              0.8 mi • Open
+                            </p>
                           </div>
                         </div>
                       </div>
@@ -179,5 +255,5 @@ export function HeroSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
