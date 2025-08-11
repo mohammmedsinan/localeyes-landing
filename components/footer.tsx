@@ -20,6 +20,7 @@ export function Footer() {
               AI-Powered Local SEO & Marketing Platform. Help your restaurant dominate local search and attract more
               customers.
             </p>
+						<br />
 				<p className="text-gray-400 text-sm leading-relaxed">📍 290 King Street E Kitchener, ON N2G 2L3, Canada</p>
 				<p className="text-gray-400 text-sm leading-relaxed">📍 30 lamiee street, montazah, Alexandria, Egypt</p>
           </div>
